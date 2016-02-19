@@ -1,0 +1,61 @@
+/*
+ ============================================================================
+ Name        : lab5_V00816219.c
+ Author      : Mike
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(void) {
+
+	int i, j;
+	int rows = 10;
+	int cols = 10;
+	double matrix[rows][cols];
+
+	printf("Enter the number of rows: ");
+	fflush(stdout);
+	scanf("%d", &rows);
+
+	printf("Enter the number of columns: ");
+	fflush(stdout);
+	scanf("%d", &cols);
+
+	printf("Reading %d X %d matrix: \n", rows, cols);
+	fflush(stdout);
+
+	for (j = 0; j < rows; j++){
+		for(i = 0; i < cols; i++){
+			scanf("%lf" , &matrix[j][i]);
+		}
+	}
+
+	printf("Matrix is: \n");
+	for (j = 0; j < rows; j++){
+		for(i = 0; i < cols; i++){
+			fflush(stdout);
+			printf("%1.0f " , matrix[j][i]);
+		}
+		printf("\n");
+	}
+
+	//printf('\n');
+
+	printf("Computing matrix transpose: \n");
+
+	for (j = 0; j < cols; j++){
+		for(i = 0; i < rows; i++){
+			fflush(stdout);
+			printf("%1.0f " , matrix[i][j]);
+		}
+		printf("\n");
+	}
+
+	return EXIT_SUCCESS;
+}
